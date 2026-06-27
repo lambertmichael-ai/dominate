@@ -205,6 +205,32 @@ body{
 }
 .menu-arrow{color:var(--muted);font-size:20px;flex-shrink:0;}
 
+/* ===== DATA TOOLS ===== */
+.data-tools{padding:6px 6px 0;}
+.data-btn{
+  width:100%;
+  background:var(--surface);
+  border:1px solid var(--line2);
+  border-radius:11px;
+  padding:14px 0;
+  margin-bottom:10px;
+  font-family:'Oswald',sans-serif;
+  font-weight:600;
+  font-size:13px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--gold);
+  cursor:pointer;
+}
+.data-btn:active{background:var(--surface2);}
+.data-btn.ghost{color:var(--dim);font-weight:500;}
+.data-note{
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.5;
+  padding:2px 6px 0;
+}
+
 /* ===== DAY LIST ===== */
 .list{padding:20px 16px 0;}
 .day-card{
@@ -909,6 +935,12 @@ body{
       <div class="menu-arrow">›</div>
     </button>
   </div>
+  <div class="data-tools">
+    <button class="data-btn" onclick="exportData()">Export my progress</button>
+    <button class="data-btn ghost" onclick="document.getElementById('importFile').click()">Restore from file</button>
+    <input type="file" id="importFile" accept="application/json,.json" style="display:none" onchange="importData(event)">
+    <div class="data-note">Saves your logged weights, reps, and checkmarks to a file. Use it to back up, switch phones, or send to your monthly review.</div>
+  </div>
 </div>
 
 <!-- DAY LIST -->
@@ -1171,6 +1203,49 @@ function loadLogs(){ try{return JSON.parse(localStorage.getItem(LOG_KEY))||{};}c
 function saveLogs(o){ try{localStorage.setItem(LOG_KEY, JSON.stringify(o));}catch(e){} }
 function loadChecks(){ try{return JSON.parse(localStorage.getItem(CHK_KEY))||{};}catch(e){return {};} }
 function persistChecks(){ try{localStorage.setItem(CHK_KEY, JSON.stringify(checkState));}catch(e){} }
+
+/* ============ EXPORT / RESTORE ============ */
+function exportData(){
+  const data = {
+    app: 'dominate',
+    version: 1,
+    exported: new Date().toISOString(),
+    logs: loadLogs(),
+    checks: loadChecks()
+  };
+  const text = JSON.stringify(data, null, 2);
+  const blob = new Blob([text], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  const d = todayISO();
+  a.href = url;
+  a.download = 'dominate-progress-' + d + '.json';
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(function(){ document.body.removeChild(a); URL.revokeObjectURL(url); }, 1500);
+}
+
+function importData(e){
+  const file = e.target.files && e.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = function(ev){
+    try{
+      const data = JSON.parse(ev.target.result);
+      if(!data || !data.logs){ alert('That file does not look like a DOMINATE backup.'); return; }
+      if(!confirm('Restore this backup? It replaces the progress currently on this device.')) return;
+      localStorage.setItem(LOG_KEY, JSON.stringify(data.logs||{}));
+      if(data.checks) localStorage.setItem(CHK_KEY, JSON.stringify(data.checks));
+      checkState = loadChecks();
+      alert('Progress restored.');
+      location.reload();
+    }catch(err){
+      alert('Could not read that file.');
+    }
+  };
+  reader.readAsText(file);
+  e.target.value = '';
+}
 
 let checkState = loadChecks();
 
