@@ -1007,16 +1007,17 @@ const WORKOUTS = {
       {n:'Band pull apart', s:'2 × 20'},
       {n:'Band external rotation', s:'1 × 15 ea', d:'Elbow bent 90°, tucked at your side. Rotate your forearm out against the band. Primes the cuff before pressing.'},
     ]},
-    {block:'Superset 1 · Chest + Side Delts', items:[
-      {n:'Low incline dumbbell press', s:'4 × 6-10', d:'Superset: a set of this, then the laterals, rest about 60 sec, repeat. Bench one notch above flat, lower 3 seconds to a deep stretch, drive your upper arms across your chest, stop short of lockout. Ramp 2 sets, then push the last 2 to 1-2 reps from failure.'},
-      {n:'Dumbbell lateral raise', s:'4 × 12-20', d:'Lead with the elbows, no shrug, no swing. Pause a beat at the top. This is the width that makes your waist look smaller.'},
+    {block:'Press · Straight Sets', items:[
+      {n:'Low incline dumbbell press', s:'4 × 6-10', d:'Your heavy lift, run it straight. Set the dumbbells, do all 4 sets, then re-dial. Bench one notch above flat, lower 3 seconds to a deep stretch, drive your upper arms across your chest, stop short of lockout. Last 2 sets at 1-2 reps from failure.'},
+      {n:'Flat dumbbell press', s:'3 × 8-12', d:'Second chest angle, straight sets. Full stretch at the bottom, 1-2 reps in reserve.'},
     ]},
-    {block:'Superset 2 · Chest + Triceps', items:[
-      {n:'Flat dumbbell press', s:'3 × 8-12', d:'Superset with the triceps move. Your second chest angle, full stretch at the bottom, 1-2 reps in reserve.'},
-      {n:'Overhead dumbbell triceps extension', s:'3 × 10-15', d:'One dumbbell in both hands overhead, lower behind your head, elbows pointed up, then extend. The deep stretch is where the growth is.'},
+    {block:'Superset 1 · Chest + Triceps', items:[
+      {n:'Band low to high fly', s:'3 × 15-20 ea', d:'Superset with the triceps. This is a band, so the dumbbells stay set the whole pair. Pull up and across your body, squeeze the upper chest.'},
+      {n:'Overhead dumbbell triceps extension', s:'3 × 10-15', d:'One dumbbell in both hands overhead, deep stretch behind the head, then extend. Keep the same dumbbells the whole superset.'},
     ]},
-    {block:'Chest Finisher', items:[
-      {n:'Incline dumbbell fly', s:'2 × 12-15', d:'Incline bench, slight elbow bend, open wide to a big stretch, squeeze back up. Stretch under load, light weight.'},
+    {block:'Superset 2 · Side Delts + Posture', items:[
+      {n:'Dumbbell lateral raise', s:'4 × 12-20', d:'Superset with the face pull. The face pull is a band, so leave the dumbbells set. Lead with the elbows, no swing.'},
+      {n:'Band face pull', s:'3 × 15-25', d:'Band at face height, pull to your forehead, elbows high and wide, squeeze the rear delts. The number one posture move.'},
     ]},
     {block:'Abs', items:[
       {n:'Weighted crunch', s:'3 × 12-20', d:'A dumbbell on your chest. Curl your ribs toward your hips, squeeze, lower slow. Add weight before reps once you clear 20.'},
@@ -1031,9 +1032,12 @@ const WORKOUTS = {
     {block:'Work', items:[
       {n:'Dead-stop single arm row', s:'4 × 8-12 ea', d:'Incline bench at 30-45°, one knee and hand on it. Let the arm hang to a full stretch, pause 1 second at the bottom, then row the elbow down and back. No swing. Your pull-up replacement for lat width.'},
     ]},
-    {block:'Superset 1 · Mid-Back + Rear Delts', items:[
-      {n:'Chest supported row', s:'3 × 10-15', d:'Superset: a set of this, then rear delts, rest about 60 sec, repeat. Face down on the incline bench, row both dumbbells to your hips, squeeze the mid-back. No momentum.'},
-      {n:'Rear delt raise', s:'3 × 15-25', d:'Hinge forward 45°, raise out to the sides, thumbs up. Back of the shoulder, not the traps. Posture and the 3D delt look.'},
+    {block:'Superset 1 · Mid-Back + Posture', items:[
+      {n:'Chest supported row', s:'3 × 10-15', d:'Superset with the band pull-apart, which needs no weight change, so the dumbbells stay set. Face down on the incline bench, row both dumbbells to your hips, squeeze the mid-back.'},
+      {n:'Band pull apart', s:'3 × 20', d:'Arms straight, pull the band apart to your chest, squeeze the shoulder blades. Rear delts and mid-traps for posture.'},
+    ]},
+    {block:'Rear Delts · Straight Sets', items:[
+      {n:'Rear delt raise', s:'3 × 15-25', d:'Light dumbbells, straight sets. Hinge forward 45°, raise out to the sides, thumbs up. Back of the shoulder, not the traps.'},
     ]},
     {block:'Superset 2 · Lats + Biceps', items:[
       {n:'Straight arm band pulldown', s:'3 × 15-25', d:'Superset with the curls. Band anchored high, arms straight, pull down to your hips, feel the lats. No bent elbows.'},
@@ -1075,16 +1079,16 @@ const WORKOUTS = {
       {n:'Dumbbell shoulder press', s:'4 × 8-12', d:'Press overhead, no full lockout, core tight, no back arch. Builds the front and side delt cap.'},
     ]},
     {block:'Superset 1 · Side + Rear Delts', items:[
-      {n:'Dumbbell lateral raise', s:'4 × 12-20', d:'Superset: a set of side raises, then rear, rest about 60 sec, repeat. Lead with the elbows, slow down. This is the delt width that defines the Creed look.'},
-      {n:'Rear delt raise', s:'4 × 15-25', d:'Hinge 45°, thumbs up, raise to the sides. The rear delt rounds out the shoulder and pulls you upright.'},
+      {n:'Dumbbell lateral raise', s:'4 × 12-20', d:'Superset, and use the same light dumbbells for both moves so there is nothing to change between them. Lead with the elbows, slow down. The delt width that defines the Creed look.'},
+      {n:'Rear delt raise', s:'4 × 15-25', d:'Same dumbbells as the laterals. Hinge 45°, thumbs up, raise to the sides. Rounds out the shoulder and pulls you upright.'},
     ]},
     {block:'Superset 2 · Biceps + Triceps', items:[
-      {n:'Incline dumbbell curl', s:'3 × 10-15', d:'Antagonist superset: curls then extensions, no wasted rest. Arms hanging back on the incline, curl up, feel the stretch at the bottom.'},
-      {n:'Overhead dumbbell triceps extension', s:'3 × 10-15', d:'Both hands on one dumbbell overhead, deep stretch behind the head, then extend.'},
+      {n:'Incline dumbbell curl', s:'3 × 10-15', d:'Superset with the band pushdown, which needs no weight change, so the dumbbells stay set. Arms hanging back on the incline, curl up, feel the stretch at the bottom.'},
+      {n:'Band triceps pushdown', s:'3 × 12-20', d:'Band anchored high, elbows pinned to your sides, push down and fully extend, squeeze the triceps.'},
     ]},
-    {block:'Superset 3 · Biceps + Triceps', items:[
-      {n:'Cross body hammer curl', s:'2 × 10-12 ea', d:'Curl up and across toward the opposite shoulder, one arm at a time. Hits the brachialis for thickness.'},
-      {n:'Lying dumbbell triceps extension', s:'2 × 10-15', d:'On your back, lower the dumbbells toward your forehead, elbows still, then extend. Different angle for the long head.'},
+    {block:'Superset 3 · Triceps + Biceps', items:[
+      {n:'Overhead dumbbell triceps extension', s:'3 × 10-15', d:'Superset with the band curl. The curl is a band, so leave the dumbbells set. Both hands on one dumbbell overhead, deep stretch, then extend.'},
+      {n:'Band curl', s:'3 × 12-20', d:'Stand on the band, palms up, curl and squeeze at the top. Constant tension on the biceps.'},
     ]},
     {block:'Abs', items:[
       {n:'Bicycle crunch', s:'3 × 15-20 ea', d:'Opposite elbow to opposite knee, slow and controlled. Obliques and the six-pack together.'},
@@ -1095,13 +1099,13 @@ const WORKOUTS = {
       {n:'Band pull apart', s:'2 × 20'},
       {n:'Band low to high fly', s:'2 × 20 ea', d:'Band anchored low, pull up and across from hip to opposite shoulder. Wakes up the upper chest.'},
     ]},
-    {block:'Superset 1 · Press + Row', items:[
-      {n:'Incline dumbbell press', s:'4 × 8-12', d:'Antagonist superset: a set of press, then a set of rows, rest about 60 sec, repeat. Deep stretch at the bottom, drive across the chest, 1-2 reps from failure.'},
-      {n:'Dead-stop single arm row', s:'4 × 8-12 ea', d:'Hang the arm to a full stretch, pause at the bottom, row the elbow down and back. Pulling that keeps your shoulders set back.'},
+    {block:'Superset 1 · Press + Pull', items:[
+      {n:'Incline dumbbell press', s:'4 × 8-12', d:'Antagonist superset with the band pulldown, which needs no weight change, so the dumbbells stay set through the pair. Deep stretch at the bottom, drive across the chest, 1-2 reps from failure.'},
+      {n:'Straight arm band pulldown', s:'4 × 15-20', d:'Band anchored high, arms straight, pull down to your hips, feel the lats. The pull that balances the press.'},
     ]},
-    {block:'Superset 2 · Fly + Row', items:[
-      {n:'Band low to high fly', s:'3 × 15-20 ea', d:'Superset with the row. Pull up and across, squeeze the upper chest.'},
-      {n:'Chest supported row', s:'3 × 10-15', d:'Face down on the incline bench, row both dumbbells to your hips, squeeze the mid-back.'},
+    {block:'Superset 2 · Row + Fly', items:[
+      {n:'Chest supported row', s:'3 × 10-15', d:'Superset with the band fly, which needs no weight change. Face down on the incline bench, row both dumbbells to your hips, squeeze the mid-back.'},
+      {n:'Band low to high fly', s:'3 × 15-20 ea', d:'Pull up and across your body, squeeze the upper chest at the top.'},
     ]},
     {block:'Superset 3 · Face Pull + Laterals', items:[
       {n:'Band face pull', s:'3 × 15-25', d:'Superset with the laterals. Pull to your forehead, elbows high and wide, squeeze the rear delts. The number one posture move.'},
@@ -1206,7 +1210,7 @@ function logType(name, s){
   if(/\bmin\b/.test(sl)) return 'none';             // walks and long posture holds
   if(/\bsec\b/.test(sl)) return 'time';             // planks and timed holds
   // band and bodyweight moves have no external load, so log reps only
-  if(/\bband\b|bodyweight|glute bridge|scapular push|push up|wall slide|prone y|bicycle crunch|leg raise|reverse crunch|dead bug|chin tuck|wall posture|short foot/.test(nl)) return 'reps';
+  if(/\bband\b|bodyweight|glute bridge|scapular push|push up|wall slide|prone y|bicycle crunch|leg raise|reverse crunch|dead bug|chin tuck|wall posture|short foot|tibialis/.test(nl)) return 'reps';
   return 'weight';                                  // dumbbell work: weight + reps
 }
 
@@ -1464,7 +1468,7 @@ function openDay(id){
     html += `<div class="note stop"><span class="nl">Stop Rule</span>If the front delt takes over pressing, drop to incline flyes and lighter presses. Train fasted, so warm up the first set extra and never hold your breath under load.</div>`;
   }
   if(id==='fri'){
-    html += `<div class="note tip"><span class="nl">How To Superset</span>Do a set of the first move, then the second, rest about 60 seconds after the pair, repeat. Pairing push with pull keeps tension high while one muscle rests, so a full upper-body day fits in 35 minutes with no lost volume.</div>`;
+    html += `<div class="note tip"><span class="nl">How To Superset</span>Every pair is one dumbbell move and one band move, so you never re-dial the dumbbells mid-pair. Do a set of the first, then the second, rest about 60 seconds after the pair, repeat. Pairing push with pull keeps tension high while one muscle rests, so a full upper-body day fits in 35 minutes.</div>`;
   }
   if(id==='sun'){
     html += `<div class="note tip"><span class="nl">Recovery Is Training</span>This day fixes your forward shoulders and keeps fat loss moving without taxing recovery. Keep the bands light and slow, and get your steps in.</div>`;
